@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+  <ul>
+    <li *ngFor="let todo of todos">
+      {{ todo }}
+        <div>
+          <button (click)="removerTodo()">Remover</button>
+          <button (click)="removerTodo()" class="completeBtn">concluir</button>
+        </div>
+    </li>
+  </ul>
+  <div class="addToDo">
+    <input type="text" id="todoID">
+    <button (click)="adicionarTodo()">Adicionar</button>
+  </div>
+
+</div>
