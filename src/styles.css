@@ -6,6 +6,7 @@
     box-sizing: border-box;
     transition: .3s;
     text-transform: capitalize;
+    transform: .5s;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     background: #222;
 }
 
-.container h1{
+.container h1 {
     text-align: center;
 }
 
@@ -36,7 +37,7 @@ ul li {
     font-size: 1.2rem;
 }
 
-ul button{
+ul button {
     background: #d12b2b;
     float: right;
     margin-left: 10px;
@@ -91,6 +92,10 @@ small {
 }
 
 @media only screen and (max-width: 600px) {
-    ul li {font-size: 0.9rem;}
-    .container {width: 400px;}
+    ul li {
+        font-size: 0.9rem;
+    }
+    .container {
+        width: 400px;
+    }
 }
