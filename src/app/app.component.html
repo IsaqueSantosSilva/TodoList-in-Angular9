@@ -1,17 +1,22 @@
 <div class="container">
     <h1>{{ title }}</h1>
   <ul>
+    <!-- <p ngIf="todos.length==0"><small>Sem taferas</small></p> -->
     <li *ngFor="let todo of todos">
-      {{ todo }}
+      {{ todo.id }}. {{ todo.title }}
         <div>
-          <button (click)="removerTodo()">Remover</button>
-          <button (click)="removerTodo()" class="completeBtn">concluir</button>
+          <button (click)="remove(todo)">X</button>
+          <button *ngIf="!todo.done" (click)="done(todo)" class="completeBtn">&#10003;</button>
+          <button *ngIf="todo.done" (click)="undone(todo)" class="completeBtn">&#x021BB;</button>
         </div>
     </li>
   </ul>
-  <div class="addToDo">
-    <input type="text" id="todoID">
-    <button (click)="adicionarTodo()">Adicionar</button>
-  </div>
-
+  <form [formGroup]="form">
+    <fieldset>
+      <label>Adicionar Tarefa</label>
+      <input type="text" maxlength="40" formControlName="title">
+      <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">*Este campo deve conter entre 5 e 40 catacteres</small>
+      <button [disabled]="form.invalid" (click)="add()">Adicionar</button>
+    </fieldset>
+  </form>
 </div>

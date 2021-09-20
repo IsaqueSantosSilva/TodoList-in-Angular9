@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     transition: .3s;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 body {
@@ -14,9 +14,10 @@ body {
 }
 
 .container {
-    padding: 10px;
+    padding: 30px;
     border: 1px solid #111;
-    box-shadow: 1px 1px 3px white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #000;
     margin: auto;
     margin-top: 10%;
     width: 600px;
@@ -32,21 +33,33 @@ ul li {
     align-items: center;
     justify-content: space-between;
     margin: 20px 0;
+    font-size: 1.2rem;
 }
 
 ul button{
     background: #d12b2b;
     float: right;
+    margin-left: 10px;
 }
 
 .completeBtn {
     background: #379b19;
 }
 
-.addToDo {
+fieldset {
+    text-align: center;
     display: grid;
-    margin: 10px;
-    justify-content: center;
+    padding: 10px;
+    margin-top: 5%;
+    background: #333;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    place-items: center;
+}
+
+fieldset button {
+    margin-top: 3%;
 }
 
 button {
@@ -59,11 +72,25 @@ button {
 }
 
 button:hover {
-    transform: scale(0.9);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 3px black;
 }
 
 input {
+    width: 80%;
     padding: 8px;
     outline: none;
+    border: none;
+    box-shadow: 0px 0px 5px #24242444;
     border-radius: 5px;
+}
+
+small {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px black;
+}
+
+@media only screen and (max-width: 600px) {
+    ul li {font-size: 0.9rem;}
+    .container {width: 400px;}
 }
